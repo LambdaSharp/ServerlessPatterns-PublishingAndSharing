@@ -1,0 +1,14 @@
+Module: Acme.Bitcoin.PriceAnalyzer
+Version: 1.0
+Using:
+  - Module: Bitcoin.Event:1.0@serverlesspatterns
+Items:
+
+  - Function: AnalyzeFunction
+    Memory: 256
+    Timeout: 30
+    Sources:
+      - EventBus: default
+        Pattern:
+          Source:
+            - Bitcoin.Event::PublishBitcoinPriceFunction
